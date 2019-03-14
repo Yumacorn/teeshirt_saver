@@ -1,1 +1,3 @@
 #!/usr/bin/env ruby
+
+TeeshirtSaver::CLI.new.call
