@@ -27,7 +27,7 @@ Product has a name
 Product has a price
 Product may have a previous price
 Product has a URL
-Product has a seller
+Product has a tag
 
 Additional:
   Size Filter

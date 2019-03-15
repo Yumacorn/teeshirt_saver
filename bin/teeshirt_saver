@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
+# require "bundler/setup"           #Why does placing this line of code break the program?
+require "./lib/teeshirt_saver.rb"
 
-require './lib/teeshirt_saver'
 #Load ruby interpreter and load environment
-
 TeeshirtSaver::CLI.new.call
