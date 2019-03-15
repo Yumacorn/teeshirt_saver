@@ -1,4 +1,5 @@
 require_relative "./teeshirt_saver/version"
+require_relative './teeshirt_saver/product'
 require_relative './teeshirt_saver/cli'
 
 # module TeeshirtSaver

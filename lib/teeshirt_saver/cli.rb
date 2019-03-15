@@ -1,17 +1,15 @@
 #CLI Controller
 class TeeshirtSaver::CLI
     def call
-      puts "Final Clearance Products"
       list_products
+      puts "Select a product by number, list products by typing list, or type exit to leave:"
       menu
       goodbye
     end
 
     def list_products
-      puts <<-HERE.gsub /^\s*/, ''
-        1. LOVE               $9.99       Original: $24      58% OFF
-        2. HAY GURL           $9.99       Original: $24      58% OFF
-      HERE
+      puts "Final Clearance Products"
+      @products = TeeshirtSaver::Product.today
     end
 
     def menu

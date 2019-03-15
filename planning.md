@@ -23,6 +23,12 @@ Show a list of products from WEB (https://www.teeturtle.com/collections/clearanc
 
 Which product are you interested in?
 
+Product has a name
+Product has a price
+Product may have a previous price
+Product has a URL
+Product has a seller
+
 Additional:
   Size Filter
   Sorted By: Recommendation, prices, etc
