@@ -10,8 +10,9 @@ class TeeshirtSaver::CLI
     def list_products
       puts "Final Clearance Products"
       @products = TeeshirtSaver::Product.today
-      @products.each.with_index(1) do {product, i}
-        Puts "#{i}. #{product. name} - "product_original price"
+      @products.each.with_index(1) do |product, i|
+        puts "#{i}. #{product. name} - {product_original price}"
+      end
     end
 
     def menu
