@@ -11,7 +11,7 @@ class TeeshirtSaver::CLI
       puts "Final Clearance Products"
       @products = TeeshirtSaver::Product.today
       @products.each.with_index(1) do |product, i|
-        puts "#{i}. #{product. name} - {product_original price}"
+        puts "#{i}. #{product. name} - #{product.price} - Originally: #{product.original_price} - #{product.tag}"
       end
     end
 
