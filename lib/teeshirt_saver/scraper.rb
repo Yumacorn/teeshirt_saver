@@ -1,5 +1,8 @@
-# require_relative './course.rb'
+require_relative "./teeshirt_saver/product"
+require_relative "./teeshirt_saver/cli"
+require_relative "./teeshirt_saver/scraper"
 
+require 'pry'
 class Scraper
   def get_page
     doc = Nokogiri::HTML(open("https://www.teeturtle.com/collections/clearance"))
@@ -10,13 +13,16 @@ class Scraper
   end
 
   def make_products
+    #Instantiate all products from current WEB
     #Attributes to populate :name, :price, :original_price, :url, :tag
     self.get_products.each do |item|
+      binding.pry
+
       product = Product.new
       product.name = item.css("h5").text
       product.price = item.css(".price sale").text
       product.original_price = item.css(".compare-at-price").text
-      product.url = item.css("h2").text
+      # product.url = item.css("h2").text
       product.tag = item.css(".sale-tag").text
 
       # product.schedule = item.css(".date").text
@@ -35,4 +41,5 @@ class Scraper
 #     end
 #   end
 end
-# Scraper.new.print_courses
+
+Scraper.new.print_courses
