@@ -7,7 +7,7 @@ class TeeshirtSaver::CLI
     end
 
     def intro
-      puts "\nWelcome! Here you will find a list of today's Final Clearance Products from Teeturtle.com"
+      puts "\n\nWelcome! Here you will find a list of today's Final Clearance Products from Teeturtle.com"
       puts "You can search through the listings and select a product to learn more."
       puts "\n---Final Clearance Products---"
       list_products
