@@ -9,7 +9,9 @@ class TeeshirtSaver::CLI
     def list_products
       puts "\n---Final Clearance Products---"
       puts "Select a product by number, list products by typing list, or type exit to leave:"
+      #Returns array of product instances to operate on
       @products = TeeshirtSaver::Product.today
+      #Prints list of products array
       @products.each.with_index(1) do |product, i|
         puts "#{i}. #{product. name} - #{product.price} - Originally: #{product.original_price} - #{product.tag}"
       end
