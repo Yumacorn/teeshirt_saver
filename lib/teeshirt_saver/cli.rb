@@ -9,8 +9,10 @@ class TeeshirtSaver::CLI
     def list_products
       puts "\n---Final Clearance Products---"
       puts "Select a product by number, list products by typing list, or type exit to leave:"
+
       #Returns array of product instances to operate on
       @products = TeeshirtSaver::Product.today
+
       #Prints list of products array
       @products.each.with_index(1) do |product, i|
         puts "#{i}. #{product. name} - #{product.price} - Originally: #{product.original_price} - #{product.tag}"
@@ -20,15 +22,15 @@ class TeeshirtSaver::CLI
     def menu
       input = nil
       while input != "exit"
-        puts "Enter the number of the product you would like to open or type list to see the product list again or type exit to leave:"
+        puts "\nSelect a product by number, list products by typing list, or type exit to leave:"
         input = gets.strip.downcase
 
         if input.to_i > 0
-          puts @products[input.to_i-1]
+          TeeshirtSaver::Product.display(input.to_i)
         elsif input == "list"
           list_products
         else
-          puts "Unable to process request, please type list or exit."
+          puts "Unable to process request, please type a product by number, list or exit."
         end
       end
     end

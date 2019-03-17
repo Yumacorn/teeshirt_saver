@@ -1,5 +1,10 @@
 class TeeshirtSaver::Product
   attr_accessor :name, :price, :original_price, :url, :tag
+  @@all = []
+
+  def initialize
+    @@all << self
+  end
 
   def self.today
     #List out a set of product instances for today
@@ -22,6 +27,15 @@ class TeeshirtSaver::Product
     product_2.url = "https://www.teeturtle.com/products/hay-gurl"
     product_2.tag = "58% OFF"
 
-    [product_1, product_2]
+    @@all = [product_1, product_2]
+  end
+
+  # def self.all
+  #   @@all
+  # end
+
+  def self.display(product_number)
+    selection = @@all[product_number-1]
+    puts "#{product_number}. #{selection.name} - #{selection.price} - Originally: #{selection.original_price} - #{selection.tag}"
   end
 end
