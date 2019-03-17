@@ -1,15 +1,19 @@
 #CLI Controller
 class TeeshirtSaver::CLI
     def call
+      intro
       list_products
       menu
       goodbye
     end
 
-    def list_products
+    def intro
+      puts "Welcome! Here you will find a list of today's Final Clearance Products from Teeturtle.com"
+      puts "You can search through the listings and select a product to learn more."
       puts "\n---Final Clearance Products---"
-      puts "Select a product by number, list products by typing list, or type exit to leave:"
+    end
 
+    def list_products
       #Returns array of product instances to operate on
       @products = TeeshirtSaver::Product.today
 
