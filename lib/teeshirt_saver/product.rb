@@ -46,6 +46,13 @@ class TeeshirtSaver::Product
 
   def self.display(product_number)
     selection = @@all[product_number-1]
+
+    #Response for non-existent product
+    if selection == nil
+      return puts "This product was not found. Please make a new selection from the list."
+    end
+
+    #Display selected product
     puts "#{product_number}. #{selection.name} - #{selection.price} - Originally: #{selection.original_price} - #{selection.tag}"
   end
 end
