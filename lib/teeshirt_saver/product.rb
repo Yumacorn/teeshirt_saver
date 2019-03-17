@@ -46,7 +46,7 @@ class TeeshirtSaver::Product
     selection = @@all[product_number-1]
     #Response for non-existent product
     if selection == nil
-      puts "Product #\"#{product_number}\" was not found. Please make a new selection from the list."
+      puts "Product \"#{product_number}\" was not found. Please make a new selection from the list."
       return false
     else
       return true
