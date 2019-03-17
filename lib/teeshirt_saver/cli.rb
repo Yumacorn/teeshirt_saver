@@ -2,13 +2,13 @@
 class TeeshirtSaver::CLI
     def call
       list_products
-      puts "Select a product by number, list products by typing list, or type exit to leave:"
       menu
       goodbye
     end
 
     def list_products
-      puts "Final Clearance Products"
+      puts "\n---Final Clearance Products---"
+      puts "Select a product by number, list products by typing list, or type exit to leave:"
       @products = TeeshirtSaver::Product.today
       @products.each.with_index(1) do |product, i|
         puts "#{i}. #{product. name} - #{product.price} - Originally: #{product.original_price} - #{product.tag}"
