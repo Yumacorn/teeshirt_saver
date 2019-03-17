@@ -54,8 +54,6 @@ class TeeshirtSaver::Product
     end
   end
 
-  end
-
   def self.display(product_number)
     if valid_product?(product_number) != false
       #Display selected product
