@@ -24,7 +24,7 @@ class TeeshirtSaver::CLI
         input = gets.strip.downcase
 
         if input.to_i > 0
-          TeeshirtSaver::Product.display(input.to_i)
+          TeeshirtSaver::Product.display_detail(input.to_i)
         elsif input == "list"
           TeeshirtSaver::Product.list_products
         elsif input == "exit"

@@ -65,7 +65,11 @@ class TeeshirtSaver::Product
     selection = @@all[product_number-1]
     if valid_product?(product_number) != false
       #Display selected product with details
-      puts "#{product_number}. #{selection.name} \nPrice: #{selection.price} \nOriginal Price: #{selection.original_price} \nURL: #{selection.URL} \n#{selection.tag}"
+      puts "#{product_number}. \"#{selection.name}\""
+      puts "    Price:          #{selection.price}"
+      puts "    Original Price: #{selection.original_price}"
+      puts "    #{selection.tag}"
+      puts "    URL: #{selection.url}"
     end
   end
 end
