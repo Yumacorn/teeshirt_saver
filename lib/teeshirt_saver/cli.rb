@@ -2,7 +2,6 @@
 class TeeshirtSaver::CLI
     def call
       intro
-      list_products
       menu
       goodbye
     end
@@ -11,16 +10,11 @@ class TeeshirtSaver::CLI
       puts "Welcome! Here you will find a list of today's Final Clearance Products from Teeturtle.com"
       puts "You can search through the listings and select a product to learn more."
       puts "\n---Final Clearance Products---"
+      list_products
     end
 
     def list_products
-      #Returns array of product instances to operate on
-      @products = TeeshirtSaver::Product.today
-
-      #Prints list of products array
-      @products.each.with_index(1) do |product, i|
-        puts "#{i}. #{product. name} - #{product.price} - Originally: #{product.original_price} - #{product.tag}"
-      end
+      TeeshirtSaver::Product.list_products
     end
 
     def menu
@@ -32,7 +26,7 @@ class TeeshirtSaver::CLI
         if input.to_i > 0
           TeeshirtSaver::Product.display(input.to_i)
         elsif input == "list"
-          list_products
+          TeeshirtSaver::Product.list_products
         else
           puts "Unable to process request, please type a product by number, list or exit."
         end

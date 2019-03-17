@@ -34,6 +34,16 @@ class TeeshirtSaver::Product
   #   @@all
   # end
 
+  def self.list_products
+    #Returns array of product instances to operate on
+    @products = TeeshirtSaver::Product.today
+
+    #Prints list of products array
+    @products.each.with_index(1) do |product, i|
+      puts "#{i}. #{product. name} - #{product.price} - Originally: #{product.original_price} - #{product.tag}"
+    end
+  end
+
   def self.display(product_number)
     selection = @@all[product_number-1]
     puts "#{product_number}. #{selection.name} - #{selection.price} - Originally: #{selection.original_price} - #{selection.tag}"
