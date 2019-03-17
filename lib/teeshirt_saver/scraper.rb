@@ -1,22 +1,18 @@
-require_relative "./teeshirt_saver/product"
-require_relative "./teeshirt_saver/cli"
-require_relative "./teeshirt_saver/scraper"
-
-require 'pry'
-class Scraper
-  def get_page
+class TeeshirtSaver::Scraper
+  def self.get_page
     doc = Nokogiri::HTML(open("https://www.teeturtle.com/collections/clearance"))
   end
 
-  def get_products
+  def self.get_products
     self.get_page.css(".product")
   end
 
-  def make_products
+  def self.make_products
     #Instantiate all products from current WEB
     #Attributes to populate :name, :price, :original_price, :url, :tag
     self.get_products.each do |item|
       binding.pry
+      #item.children[1].attributes = Secret to getting href (almost)
 
       product = Product.new
       product.name = item.css("h5").text
@@ -42,4 +38,4 @@ class Scraper
 #   end
 end
 
-Scraper.new.print_courses
+# Scraper.new.print_courses
