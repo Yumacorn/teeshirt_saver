@@ -39,9 +39,7 @@ class TeeshirtSaver::Product
     @products = TeeshirtSaver::Product.today
 
     #Prints list of products array
-    @products.each.with_index(1) do |product, i|
-      puts "#{i}. #{product. name} - #{product.price} - Originally: #{product.original_price} - #{product.tag}"
-    end
+    @products.each_with_index {|product, i| display(i+1)}
   end
 
   def self.display(product_number)
