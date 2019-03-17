@@ -13,7 +13,12 @@ class Scraper
     #Attributes to populate :name, :price, :original_price, :url, :tag
     self.get_products.each do |item|
       product = Product.new
-      product.title = item.css("h2").text
+      product.name = item.css("h5").text
+      product.price = item.css(".price sale").text
+      product.original_price = item.css(".compare-at-price").text
+      product.url = item.css("h2").text
+      product.tag = item.css(".sale-tag").text
+
       # product.schedule = item.css(".date").text
       # product.description = item.css("p").text
     end
