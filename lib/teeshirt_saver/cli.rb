@@ -27,6 +27,8 @@ class TeeshirtSaver::CLI
           TeeshirtSaver::Product.display(input.to_i)
         elsif input == "list"
           TeeshirtSaver::Product.list_products
+        elsif input == "exit"
+          return
         else
           puts "Unable to process request, please type a product by number, list or exit."
         end

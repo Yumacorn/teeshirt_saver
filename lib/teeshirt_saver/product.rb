@@ -42,19 +42,19 @@ class TeeshirtSaver::Product
     @products.each_with_index {|product, i| display(i+1)}
   end
 
-  def valid_product?(product_number)
+  def self.valid_product?(product_number)
     selection = @@all[product_number-1]
     #Response for non-existent product
     if selection == nil
       puts "Product #\"#{product_number}\" was not found. Please make a new selection from the list."
       return false
     else
-      puts "Product #\"#{product_number}\" found."
       return true
     end
   end
 
   def self.display(product_number)
+    selection = @@all[product_number-1]
     if valid_product?(product_number) != false
       #Display selected product
       puts "#{product_number}. #{selection.name} - #{selection.price} - Originally: #{selection.original_price} - #{selection.tag}"
@@ -62,6 +62,7 @@ class TeeshirtSaver::Product
   end
 
   def self.display_detail(product_number)
+    selection = @@all[product_number-1]
     if valid_product?(product_number) != false
       #Display selected product with details
       puts "#{product_number}. #{selection.name} \nPrice: #{selection.price} \nOriginal Price: #{selection.original_price} \nURL: #{selection.URL} \n#{selection.tag}"
