@@ -5,19 +5,20 @@ class Scraper
     doc = Nokogiri::HTML(open("https://www.teeturtle.com/collections/clearance"))
   end
 
-#   def get_courses
-#     self.get_page.css(".post")
-#   end
-#
-#   def make_courses
-#     self.get_courses.each do |post|
-#     course = Course.new
-#     course.title = post.css("h2").text
-#     course.schedule = post.css(".date").text
-#     course.description = post.css("p").text
-#     end
-#   end
-#
+  def get_products
+    self.get_page.css(".product")
+  end
+
+  def make_products
+    #Attributes to populate :name, :price, :original_price, :url, :tag
+    self.get_products.each do |item|
+      product = Product.new
+      product.title = item.css("h2").text
+      # product.schedule = item.css(".date").text
+      # product.description = item.css("p").text
+    end
+  end
+
 #   def print_courses
 #     self.make_courses
 #     Course.all.each do |course|
