@@ -8,10 +8,10 @@ class TeeshirtSaver::Scraper
   end
 
   def self.make_products
+    products = []
     #Instantiate all products from current WEB
     #Attributes to populate :name, :price, :original_price, :url, :tag
     self.get_products.each do |item|
-
       product = TeeshirtSaver::Product.new
       product.name = item.css("h5").text
       product.price = item.css(".price").text
@@ -20,9 +20,11 @@ class TeeshirtSaver::Scraper
       #Pick URL of product item.children[1].attributes["href"].value = Secret to getting href
       product.url = "https://www.teeturtle.com" + item.children[1].attributes["href"].value
       product.tag = item.css(".sale-tag").text
-      binding.pry
 
+      products << product
     end
+
+    products
   end
 
 #   def print_courses
