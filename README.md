@@ -1,8 +1,10 @@
 # TeeshirtSaver
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/teeshirt_saver`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to Teeshirt Saver!
 
-TODO: Delete this and the text above, and describe your gem
+This program will allow you to see daily products on clearance at Teeturtle.com. Every day, new items are added and removed to the clearance section of Teeturtle. Make sure to come back often to check out new savings and enjoy!
+
+Please see the Usage instructions below to begin!
 
 ## Installation
 
