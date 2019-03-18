@@ -17,10 +17,9 @@ class TeeshirtSaver::Scraper
       product.price = item.css(".price").text
       product.original_price = item.css(".compare-at-price").text
 
-      #Pick URL of product item.children[1].attributes["href"].value = Secret to getting href
+      #Pick URL of product: item.children[1].attributes["href"].value = Secret to getting href
       product.url = "https://www.teeturtle.com" + item.children[1].attributes["href"].value
       product.tag = item.css(".sale-tag").text
-
       products << product
     end
     products

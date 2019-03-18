@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In order to run this repo:
+  1. Run './bin/setup' to install
+  2. Run './bin/teeshirt_saver' to execute
+  3. Enjoy your new Teeshirt Saver Program! Come back daily for new savings!
 
 ## Development
 
