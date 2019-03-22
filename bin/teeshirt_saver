@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-require 'pry'
-require "bundler/setup"
 require "./lib/teeshirt_saver.rb"
 
 #Load ruby interpreter and load environment
