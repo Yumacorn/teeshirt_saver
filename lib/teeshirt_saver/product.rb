@@ -47,7 +47,7 @@ class TeeshirtSaver::Product
   end
 
   def self.display_alphabetically
-   sorted =  @@all.sort_by {|product| product.name.scan(/^\w/)}
+   sorted = @@all.sort_by {|product| product.name.scan(/^\w/)}
    sorted.each {|product| puts product.name}
  end
 end
