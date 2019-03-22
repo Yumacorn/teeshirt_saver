@@ -20,7 +20,7 @@ class TeeshirtSaver::CLI
     def menu
       input = nil
       while input != "exit"
-        puts "\nSelect a product by number, list products by typing list, or type exit to leave:"
+        puts "\nSelect a product by number, list products by typing list, sort products by typing sorted, or type exit to leave:"
         input = gets.strip.downcase
 
         if input.to_i > 0
@@ -29,8 +29,10 @@ class TeeshirtSaver::CLI
           TeeshirtSaver::Product.list_products
         elsif input == "exit"
           return
+        elsif input == "sorted"
+          TeeshirtSaver::Product.display_alphabetically
         else
-          puts "Unable to process request, please type a product by number, list or exit."
+          puts "Unable to process request, please type a product by number, list, sorted, or exit."
         end
       end
     end

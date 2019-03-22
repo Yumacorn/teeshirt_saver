@@ -45,4 +45,9 @@ class TeeshirtSaver::Product
       puts "    URL: #{selection.url}"
     end
   end
+
+  def self.display_alphabetically
+    puts @@all.sort
+
+  end
 end
