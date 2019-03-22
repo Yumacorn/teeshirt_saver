@@ -47,7 +47,10 @@ class TeeshirtSaver::Product
   end
 
   def self.display_alphabetically
-    puts @@all.sort
-
+    @@all.sort_by do |product|
+      product.name.scan(/^/)
+      binding.pry
+      puts product.name
+    end
   end
 end

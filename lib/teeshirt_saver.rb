@@ -1,9 +1,9 @@
 # require_relative "../bin/setup"
 # require 'bundle install'
-puts "help"
 require "bundler/setup"
 require "open-uri"
 require "nokogiri"
+require 'pry'
 
 
 require_relative "./teeshirt_saver/version"
