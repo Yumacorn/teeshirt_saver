@@ -3,7 +3,8 @@ class TeeshirtSaver::Product
   @@all = []
 
   def self.today
-    @@all = TeeshirtSaver::Scraper.make_products
+    todays_products = TeeshirtSaver::Scraper.make_products
+    todays_products.each {|item| @@all << item}
   end
 
   def self.list_products
